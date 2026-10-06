@@ -11,18 +11,23 @@ export const customersRouter = router({
       const recs = getMockRecommendations();
       return mockCustomers.map(c => ({
         ...c,
+        vendingStations: c.vendingStations.map(station => ({
+          ...station,
+          stockOutItemIds: [...new Set(station.stationItems.filter(item => item.quantityOnHand <= 0).map(item => item.itemId))],
+        })),
         _count: {
           recommendations: recs.filter(r => r.customerId === c.id && r.status === "PENDING").length
         }
       }));
     }
-    return ctx.prisma.customer.findMany({
+    const customers = await ctx.prisma.customer.findMany({
       include: {
         vendingStations: {
           include: {
             _count: {
               select: { stationItems: true },
             },
+            stationItems: { where: { quantityOnHand: { lte: 0 } }, select: { itemId: true } },
           },
         },
         _count: {
@@ -31,6 +36,13 @@ export const customersRouter = router({
       },
       orderBy: { name: "asc" },
     });
+    return customers.map(customer => ({
+      ...customer,
+      vendingStations: customer.vendingStations.map(({ stationItems, ...station }) => ({
+        ...station,
+        stockOutItemIds: [...new Set(stationItems.map(item => item.itemId))],
+      })),
+    }));
   }),
 
   // Get single customer with full details

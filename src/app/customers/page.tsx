@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CustomerStockOutAlert } from "@/components/stock-out-alert";
 import { BrandBadge, MachineIcon } from "@/components/brand-icons";
 import { useState } from "react";
 import { ForgeLayout, SectionHeader, EmptyState } from "@/components/forge-layout";
@@ -24,7 +25,7 @@ import {
 export default function CustomersPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const { data: customers, isLoading } = trpc.customers.list.useQuery();
+  const { data: customers, isLoading } = trpc.customers.list.useQuery(undefined, { refetchInterval: 15000, refetchOnWindowFocus: true });
 
   const filteredCustomers = customers?.filter(
     (c) =>
@@ -126,7 +127,7 @@ export default function CustomersPage() {
             viewMode === "grid" ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredCustomers.map((customer, index) => (
-                  <Link key={customer.id} href={`/customers/${customer.id}`}>
+                  <div key={customer.id} className="stock-out-card-wrap"><Link href={`/customers/${customer.id}`}>
                     <div
                       className="forge-card rounded-lg p-5 cursor-pointer group transition-all duration-300 hover:border-[var(--copper)]/30 h-full"
                       style={{ animationDelay: `${index * 0.03}s` }}
@@ -198,7 +199,7 @@ export default function CustomersPage() {
                         <ArrowRight className="w-3 h-3" />
                       </div>
                     </div>
-                  </Link>
+                  </Link><CustomerStockOutAlert stations={customer.vendingStations} /></div>
                 ))}
               </div>
             ) : (
@@ -215,7 +216,7 @@ export default function CustomersPage() {
 
                 {/* List items */}
                 {filteredCustomers.map((customer, index) => (
-                  <Link key={customer.id} href={`/customers/${customer.id}`}>
+                  <div key={customer.id} className="stock-out-card-wrap"><Link href={`/customers/${customer.id}`}>
                     <div
                       className="grid grid-cols-12 gap-4 items-center forge-card rounded-lg px-5 py-4 cursor-pointer group transition-all duration-200 hover:border-[var(--copper)]/30"
                       style={{ animationDelay: `${index * 0.02}s` }}
@@ -279,7 +280,7 @@ export default function CustomersPage() {
                         )}
                       </div>
                     </div>
-                  </Link>
+                  </Link><CustomerStockOutAlert stations={customer.vendingStations} /></div>
                 ))}
               </div>
             )

@@ -1,0 +1,16 @@
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { AppRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { DashboardStockOutAlert, StockOutBadge, CustomerStockOutAlert } from '../src/components/stock-out-alert';
+import assert from 'node:assert/strict';
+const render=(node: React.ReactNode)=>renderToStaticMarkup(<AppRouterContext.Provider value={{} as never}>{node}</AppRouterContext.Provider>);
+const clear=render(<DashboardStockOutAlert stations={[]} loading={false} error={false}/>);
+assert.match(clear,/stock-out-clear/); assert.match(clear,/0 SKUs stocked out/); assert.match(clear,/disabled/);
+const stations=[{id:'s1',name:'A',customerId:'c1',customerName:'Customer',stockOutItemIds:['sku1','sku2']},{id:'s2',name:'B',customerId:'c1',customerName:'Customer',stockOutItemIds:['sku1']}];
+const active=render(<DashboardStockOutAlert stations={stations} loading={false} error={false}/>);
+assert.match(active,/stock-out-active/); assert.match(active,/2 SKUs stocked out/); assert.match(active,/Across 2 stations/); assert.match(active,/station=s2/);
+assert.equal(render(<StockOutBadge count={0}/>),'');
+assert.equal(render(<CustomerStockOutAlert stations={[]}/>),'');
+assert.match(render(<CustomerStockOutAlert stations={stations}/>),/2 stocked out/);
+assert.match(render(<DashboardStockOutAlert stations={[]} loading={false} error={true}/>),/stock-out-pending/);
+console.log('Passed: zero state, active state, distinct SKU count, station destinations, hidden empty badges, and error state.');

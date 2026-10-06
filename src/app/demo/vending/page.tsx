@@ -54,6 +54,8 @@ export default function VendingSimulatorPage() {
   const issueMutation = trpc.demo.issueItem.useMutation({
     onSuccess: () => {
       utils.demo.getVendingStationsForDemo.invalidate();
+      utils.customers.list.invalidate();
+      utils.customers.getById.invalidate();
     },
   });
 

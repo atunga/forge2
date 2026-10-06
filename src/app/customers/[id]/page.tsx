@@ -3,8 +3,9 @@
 import { MachineIcon, BrandBadge } from "@/components/brand-icons";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { StockOutBadge } from "@/components/stock-out-alert";
+import { useParams, useSearchParams } from "next/navigation";
+import { Suspense, useState, useEffect } from "react";
 import { ForgeLayout, StatCard, SectionHeader, EmptyState } from "@/components/forge-layout";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -58,9 +59,23 @@ import {
   };
 
 export default function CustomerDetailPage() {
+  return <Suspense fallback={<ForgeLayout><p className="p-8">Loading station inventory…</p></ForgeLayout>}><CustomerDetailRoute /></Suspense>;
+}
+
+function CustomerDetailRoute() {
+  const params = useParams();
+  const searchParams = useSearchParams();
+  return <CustomerDetailContent key={`${params.id}:${searchParams.toString()}`} />;
+}
+
+function CustomerDetailContent() {
+  const searchParams = useSearchParams();
+  const [stationSelection, setSelectedStationId] = useState<string | null>(null);
+  const selectedStationId = stationSelection ?? searchParams.get("station") ?? "all";
+  const [tabSelection, setTabSelection] = useState<string | null>(null);
+  const activeTab = tabSelection ?? (searchParams.get("tab") === "stations" ? "stations" : "reorder");
   const params = useParams();
   const customerId = params.id as string;
-  const [selectedStationId, setSelectedStationId] = useState<string>("all");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Reorder tab state
@@ -140,7 +155,7 @@ export default function CustomerDetailPage() {
     localStorage.setItem(`forge-orders-${customerId}`, JSON.stringify(updatedHistory));
   };
 
-  const { data: customer, isLoading } = trpc.customers.getById.useQuery({ id: customerId });
+  const { data: customer, isLoading } = trpc.customers.getById.useQuery({ id: customerId }, { refetchInterval: 15000, refetchOnWindowFocus: true });
   const { data: erpData } = trpc.erp.getCustomerItemsInventory.useQuery({ customerId });
   const { data: recommendations, refetch: refetchRecommendations } =
     trpc.recommendations.getByCustomer.useQuery({ customerId, status: "PENDING" });
@@ -646,7 +661,7 @@ export default function CustomerDetailPage() {
 
         {/* Tabs */}
         <div className="opacity-0 animate-fade-in-up stagger-6">
-          <Tabs defaultValue="reorder" className="space-y-6">
+          <Tabs value={activeTab} onValueChange={setTabSelection} className="space-y-6">
             <TabsList className="bg-[var(--card)] border border-[var(--border)] p-1">
               <TabsTrigger
                 value="reorder"
@@ -777,7 +792,7 @@ export default function CustomerDetailPage() {
                                       <MachineIcon type={station.name} brand={station.vendingType} className="w-8 h-9" />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p>
+                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p><StockOutBadge count={new Set(station.stationItems.filter(si => si.quantityOnHand <= 0).map(si => si.itemId)).size} />
                                       <p className="text-xs text-[var(--muted-foreground)]">{station.stationItems.length} items</p>
                                     </div>
                                     {selectedStationId === station.id && <div className="w-2 h-2 rounded-full bg-[var(--copper)]" />}
@@ -818,7 +833,7 @@ export default function CustomerDetailPage() {
                             <MachineIcon type={station.name} brand={station.vendingType} className="w-10 h-12" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-[var(--foreground)]">{station.name}</h3>
+                            <div className="flex flex-wrap items-center gap-3"><h3 className="font-semibold text-[var(--foreground)]">{station.name}</h3><StockOutBadge count={new Set(station.stationItems.filter(si => si.quantityOnHand <= 0).map(si => si.itemId)).size} /></div>
                             <p className="text-sm text-[var(--muted-foreground)]">
                               {station.location} • <BrandBadge brand={station.vendingType} />
                             </p>
@@ -1241,7 +1256,7 @@ export default function CustomerDetailPage() {
                                       <MachineIcon type={station.name} brand={station.vendingType} className="w-8 h-9" />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p>
+                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p><StockOutBadge count={new Set(station.stationItems.filter(si => si.quantityOnHand <= 0).map(si => si.itemId)).size} />
                                       <p className="text-xs text-[var(--muted-foreground)]">
                                         {station.stationItems.length} items
                                         {lowStock > 0 && (
@@ -1302,7 +1317,7 @@ export default function CustomerDetailPage() {
                         <MachineIcon type={station.name} brand={station.vendingType} className="w-10 h-12" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-[var(--foreground)]">{station.name}</h3>
+                        <div className="flex flex-wrap items-center gap-3"><h3 className="font-semibold text-[var(--foreground)]">{station.name}</h3><StockOutBadge count={new Set(station.stationItems.filter(si => si.quantityOnHand <= 0).map(si => si.itemId)).size} /></div>
                         <p className="text-sm text-[var(--muted-foreground)]">
                           {station.location} • <BrandBadge brand={station.vendingType} />
                         </p>
@@ -1531,7 +1546,7 @@ export default function CustomerDetailPage() {
                                       <MachineIcon type={station.name} brand={station.vendingType} className="w-8 h-9" />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p>
+                                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{station.name}</p><StockOutBadge count={new Set(station.stationItems.filter(si => si.quantityOnHand <= 0).map(si => si.itemId)).size} />
                                       <p className="text-xs text-[var(--muted-foreground)]">
                                         {stationRecs} recommendation{stationRecs !== 1 ? "s" : ""}
                                       </p>

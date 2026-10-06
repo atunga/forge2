@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CustomerStockOutAlert, DashboardStockOutAlert } from "@/components/stock-out-alert";
 import { ForgeMark, MachineIcon, BrandBadge } from "@/components/brand-icons";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
@@ -22,7 +23,7 @@ import {
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { data: customers, isLoading } = trpc.customers.list.useQuery();
+  const { data: customers, isLoading, isError } = trpc.customers.list.useQuery(undefined, { refetchInterval: 15000, refetchOnWindowFocus: true });
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -140,6 +141,7 @@ export default function DashboardPage() {
           <div><h1>Your operation, together.</h1><p>One place to manage vending inventory, warehouse stock, and the decisions that keep work moving.</p></div>
           <ForgeMark className="hero-mark" />
         </div>
+        <DashboardStockOutAlert stations={customers?.flatMap(c => c.vendingStations.map(s => ({ ...s, customerName: c.name }))) ?? []} loading={isLoading} error={isError} />
         <div className="fleet-overview">
           {(["AUTOCRIB", "CRIBMASTER"] as const).map(brand => {
             const stations = customers?.flatMap(c => c.vendingStations).filter(s => s.vendingType === brand) ?? [];
@@ -338,7 +340,7 @@ export default function DashboardPage() {
           ) : customers && customers.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {customers.slice(0, 6).map((customer, index) => (
-                <Link key={customer.id} href={`/customers/${customer.id}`}>
+                <div key={customer.id} className="stock-out-card-wrap"><Link href={`/customers/${customer.id}`}>
                   <div
                     className="forge-card rounded-lg p-5 cursor-pointer group transition-all duration-300 hover:border-[var(--copper)]/30"
                     style={{ animationDelay: `${0.3 + index * 0.05}s` }}
@@ -402,7 +404,7 @@ export default function DashboardPage() {
                       <ArrowRight className="w-3 h-3" />
                     </div>
                   </div>
-                </Link>
+                </Link><CustomerStockOutAlert stations={customer.vendingStations} /></div>
               ))}
             </div>
           ) : (
