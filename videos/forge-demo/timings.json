@@ -1,0 +1,899 @@
+{
+  "text": "[confident] Meet Forge. Your vending and inventory systems, finally working together.\n\nThe dashboard brings AutoCrib and CribMaster into one view: customers, stations, stocked items, and pending actions. Red stock-out alerts point straight to the station needing attention. [playfully] No treasure hunt required.\n\nFind customers by name or account code. Results narrow as you type. Each card shows stations, items, machine brand, location, pending recommendations, and stock-outs.\n\nOpen an account for its station count, total items, low stock, and pending actions.\n\nScroll through stations to inspect quantities, min-max settings, pack sizes, warehouse availability, and incoming orders. Select replenishment items, adjust quantities, and create an order summary.\n\nFor live installations, Forge is designed to combine its proprietary inventory calculations with your choice of frontier AI\u2014ChatGPT, Claude, Grok, or local models\u2014to optimize min-max levels using real usage data.\n\nThe Machine Library counts each machine type across your fleet. [confident] Forge. Keep inventory moving\u2014and guesswork parked.",
+  "words": [
+    {
+      "text": "Meet",
+      "type": "word",
+      "start": 0.08,
+      "end": 0.32
+    },
+    {
+      "text": "Forge.",
+      "type": "word",
+      "start": 0.48,
+      "end": 1.12
+    },
+    {
+      "text": "Your",
+      "type": "word",
+      "start": 1.28,
+      "end": 1.44
+    },
+    {
+      "text": "vending",
+      "type": "word",
+      "start": 1.52,
+      "end": 1.84
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 1.88,
+      "end": 1.92
+    },
+    {
+      "text": "inventory",
+      "type": "word",
+      "start": 2,
+      "end": 2.48
+    },
+    {
+      "text": "systems,",
+      "type": "word",
+      "start": 2.56,
+      "end": 3.2
+    },
+    {
+      "text": "finally",
+      "type": "word",
+      "start": 3.28,
+      "end": 3.76
+    },
+    {
+      "text": "working",
+      "type": "word",
+      "start": 3.84,
+      "end": 4.16
+    },
+    {
+      "text": "together.",
+      "type": "word",
+      "start": 4.24,
+      "end": 4.96
+    },
+    {
+      "text": "The",
+      "type": "word",
+      "start": 5.2,
+      "end": 5.28
+    },
+    {
+      "text": "dashboard",
+      "type": "word",
+      "start": 5.56,
+      "end": 5.84
+    },
+    {
+      "text": "brings",
+      "type": "word",
+      "start": 5.88,
+      "end": 6.16
+    },
+    {
+      "text": "AutoCrib",
+      "type": "word",
+      "start": 6.24,
+      "end": 6.72
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 6.76,
+      "end": 6.8
+    },
+    {
+      "text": "CribMaster",
+      "type": "word",
+      "start": 6.96,
+      "end": 7.52
+    },
+    {
+      "text": "into",
+      "type": "word",
+      "start": 7.6,
+      "end": 7.84
+    },
+    {
+      "text": "one",
+      "type": "word",
+      "start": 7.92,
+      "end": 8.08
+    },
+    {
+      "text": "view:",
+      "type": "word",
+      "start": 8.16,
+      "end": 8.8
+    },
+    {
+      "text": "customers,",
+      "type": "word",
+      "start": 9.08,
+      "end": 9.52
+    },
+    {
+      "text": "stations,",
+      "type": "word",
+      "start": 9.8,
+      "end": 10.24
+    },
+    {
+      "text": "stocked",
+      "type": "word",
+      "start": 10.4,
+      "end": 10.64
+    },
+    {
+      "text": "items,",
+      "type": "word",
+      "start": 10.72,
+      "end": 11.12
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 11.24,
+      "end": 11.36
+    },
+    {
+      "text": "pending",
+      "type": "word",
+      "start": 11.44,
+      "end": 11.68
+    },
+    {
+      "text": "actions.",
+      "type": "word",
+      "start": 11.76,
+      "end": 12.56
+    },
+    {
+      "text": "Red",
+      "type": "word",
+      "start": 12.64,
+      "end": 12.8
+    },
+    {
+      "text": "stock-out",
+      "type": "word",
+      "start": 12.88,
+      "end": 13.28
+    },
+    {
+      "text": "alerts",
+      "type": "word",
+      "start": 13.36,
+      "end": 13.68
+    },
+    {
+      "text": "point",
+      "type": "word",
+      "start": 13.76,
+      "end": 14
+    },
+    {
+      "text": "straight",
+      "type": "word",
+      "start": 14.16,
+      "end": 14.32
+    },
+    {
+      "text": "to",
+      "type": "word",
+      "start": 14.36,
+      "end": 14.4
+    },
+    {
+      "text": "the",
+      "type": "word",
+      "start": 14.48,
+      "end": 14.52
+    },
+    {
+      "text": "station",
+      "type": "word",
+      "start": 14.56,
+      "end": 14.96
+    },
+    {
+      "text": "needing",
+      "type": "word",
+      "start": 15.04,
+      "end": 15.2
+    },
+    {
+      "text": "attention.",
+      "type": "word",
+      "start": 15.28,
+      "end": 16.08
+    },
+    {
+      "text": "No",
+      "type": "word",
+      "start": 16.16,
+      "end": 16.32
+    },
+    {
+      "text": "treasure",
+      "type": "word",
+      "start": 16.4,
+      "end": 16.72
+    },
+    {
+      "text": "hunt",
+      "type": "word",
+      "start": 16.8,
+      "end": 16.96
+    },
+    {
+      "text": "required.",
+      "type": "word",
+      "start": 17.24,
+      "end": 17.92
+    },
+    {
+      "text": "Find",
+      "type": "word",
+      "start": 18.04,
+      "end": 18.16
+    },
+    {
+      "text": "customers",
+      "type": "word",
+      "start": 18.24,
+      "end": 18.64
+    },
+    {
+      "text": "by",
+      "type": "word",
+      "start": 18.72,
+      "end": 18.88
+    },
+    {
+      "text": "name",
+      "type": "word",
+      "start": 18.96,
+      "end": 19.28
+    },
+    {
+      "text": "or",
+      "type": "word",
+      "start": 19.32,
+      "end": 19.36
+    },
+    {
+      "text": "account",
+      "type": "word",
+      "start": 19.44,
+      "end": 19.76
+    },
+    {
+      "text": "code.",
+      "type": "word",
+      "start": 19.92,
+      "end": 20.32
+    },
+    {
+      "text": "Results",
+      "type": "word",
+      "start": 20.56,
+      "end": 20.8
+    },
+    {
+      "text": "narrow",
+      "type": "word",
+      "start": 20.88,
+      "end": 21.2
+    },
+    {
+      "text": "as",
+      "type": "word",
+      "start": 21.28,
+      "end": 21.36
+    },
+    {
+      "text": "you",
+      "type": "word",
+      "start": 21.44,
+      "end": 21.52
+    },
+    {
+      "text": "type.",
+      "type": "word",
+      "start": 21.68,
+      "end": 22.24
+    },
+    {
+      "text": "Each",
+      "type": "word",
+      "start": 22.36,
+      "end": 22.48
+    },
+    {
+      "text": "card",
+      "type": "word",
+      "start": 22.56,
+      "end": 22.8
+    },
+    {
+      "text": "shows",
+      "type": "word",
+      "start": 22.88,
+      "end": 23.12
+    },
+    {
+      "text": "stations,",
+      "type": "word",
+      "start": 23.4,
+      "end": 23.84
+    },
+    {
+      "text": "items,",
+      "type": "word",
+      "start": 24.08,
+      "end": 24.4
+    },
+    {
+      "text": "machine",
+      "type": "word",
+      "start": 24.6,
+      "end": 24.8
+    },
+    {
+      "text": "brand,",
+      "type": "word",
+      "start": 24.88,
+      "end": 25.36
+    },
+    {
+      "text": "location,",
+      "type": "word",
+      "start": 25.64,
+      "end": 26.16
+    },
+    {
+      "text": "pending",
+      "type": "word",
+      "start": 26.28,
+      "end": 26.4
+    },
+    {
+      "text": "recommendations,",
+      "type": "word",
+      "start": 26.48,
+      "end": 27.28
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 27.32,
+      "end": 27.36
+    },
+    {
+      "text": "stock-outs.",
+      "type": "word",
+      "start": 27.44,
+      "end": 28.4
+    },
+    {
+      "text": "Open",
+      "type": "word",
+      "start": 28.48,
+      "end": 28.64
+    },
+    {
+      "text": "an",
+      "type": "word",
+      "start": 28.72,
+      "end": 28.8
+    },
+    {
+      "text": "account",
+      "type": "word",
+      "start": 29,
+      "end": 29.2
+    },
+    {
+      "text": "for",
+      "type": "word",
+      "start": 29.28,
+      "end": 29.36
+    },
+    {
+      "text": "its",
+      "type": "word",
+      "start": 29.44,
+      "end": 29.52
+    },
+    {
+      "text": "station",
+      "type": "word",
+      "start": 29.72,
+      "end": 29.92
+    },
+    {
+      "text": "count,",
+      "type": "word",
+      "start": 30,
+      "end": 30.4
+    },
+    {
+      "text": "total",
+      "type": "word",
+      "start": 30.56,
+      "end": 30.72
+    },
+    {
+      "text": "items,",
+      "type": "word",
+      "start": 30.92,
+      "end": 31.28
+    },
+    {
+      "text": "low",
+      "type": "word",
+      "start": 31.36,
+      "end": 31.44
+    },
+    {
+      "text": "stock,",
+      "type": "word",
+      "start": 31.52,
+      "end": 32
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 32.04,
+      "end": 32.08
+    },
+    {
+      "text": "pending",
+      "type": "word",
+      "start": 32.16,
+      "end": 32.48
+    },
+    {
+      "text": "actions.",
+      "type": "word",
+      "start": 32.76,
+      "end": 33.36
+    },
+    {
+      "text": "Scroll",
+      "type": "word",
+      "start": 33.52,
+      "end": 33.68
+    },
+    {
+      "text": "through",
+      "type": "word",
+      "start": 33.76,
+      "end": 33.92
+    },
+    {
+      "text": "stations",
+      "type": "word",
+      "start": 34.16,
+      "end": 34.4
+    },
+    {
+      "text": "to",
+      "type": "word",
+      "start": 34.48,
+      "end": 34.56
+    },
+    {
+      "text": "inspect",
+      "type": "word",
+      "start": 34.76,
+      "end": 34.96
+    },
+    {
+      "text": "quantities,",
+      "type": "word",
+      "start": 35.04,
+      "end": 35.76
+    },
+    {
+      "text": "min-max",
+      "type": "word",
+      "start": 35.84,
+      "end": 36.24
+    },
+    {
+      "text": "settings,",
+      "type": "word",
+      "start": 36.44,
+      "end": 36.8
+    },
+    {
+      "text": "pack",
+      "type": "word",
+      "start": 36.88,
+      "end": 37.04
+    },
+    {
+      "text": "sizes,",
+      "type": "word",
+      "start": 37.12,
+      "end": 37.76
+    },
+    {
+      "text": "warehouse",
+      "type": "word",
+      "start": 37.96,
+      "end": 38.16
+    },
+    {
+      "text": "availability,",
+      "type": "word",
+      "start": 38.24,
+      "end": 38.96
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 39.04,
+      "end": 39.12
+    },
+    {
+      "text": "incoming",
+      "type": "word",
+      "start": 39.2,
+      "end": 39.6
+    },
+    {
+      "text": "orders.",
+      "type": "word",
+      "start": 39.68,
+      "end": 40.4
+    },
+    {
+      "text": "Select",
+      "type": "word",
+      "start": 40.56,
+      "end": 40.72
+    },
+    {
+      "text": "replenishment",
+      "type": "word",
+      "start": 40.8,
+      "end": 41.28
+    },
+    {
+      "text": "items,",
+      "type": "word",
+      "start": 41.36,
+      "end": 41.84
+    },
+    {
+      "text": "adjust",
+      "type": "word",
+      "start": 42,
+      "end": 42.16
+    },
+    {
+      "text": "quantities,",
+      "type": "word",
+      "start": 42.24,
+      "end": 42.88
+    },
+    {
+      "text": "and",
+      "type": "word",
+      "start": 42.92,
+      "end": 42.96
+    },
+    {
+      "text": "create",
+      "type": "word",
+      "start": 43.04,
+      "end": 43.36
+    },
+    {
+      "text": "an",
+      "type": "word",
+      "start": 43.44,
+      "end": 43.52
+    },
+    {
+      "text": "order",
+      "type": "word",
+      "start": 43.6,
+      "end": 43.76
+    },
+    {
+      "text": "summary.",
+      "type": "word",
+      "start": 43.84,
+      "end": 44.64
+    },
+    {
+      "text": "For",
+      "type": "word",
+      "start": 44.72,
+      "end": 44.8
+    },
+    {
+      "text": "live",
+      "type": "word",
+      "start": 44.92,
+      "end": 45.04
+    },
+    {
+      "text": "installations,",
+      "type": "word",
+      "start": 45.24,
+      "end": 46
+    },
+    {
+      "text": "Forge",
+      "type": "word",
+      "start": 46.16,
+      "end": 46.32
+    },
+    {
+      "text": "is",
+      "type": "word",
+      "start": 46.4,
+      "end": 46.48
+    },
+    {
+      "text": "designed",
+      "type": "word",
+      "start": 46.56,
+      "end": 46.88
+    },
+    {
+      "text": "to",
+      "type": "word",
+      "start": 46.92,
+      "end": 46.96
+    },
+    {
+      "text": "combine",
+      "type": "word",
+      "start": 47.04,
+      "end": 47.36
+    },
+    {
+      "text": "its",
+      "type": "word",
+      "start": 47.44,
+      "end": 47.52
+    },
+    {
+      "text": "proprietary",
+      "type": "word",
+      "start": 47.6,
+      "end": 48.24
+    },
+    {
+      "text": "inventory",
+      "type": "word",
+      "start": 48.32,
+      "end": 48.72
+    },
+    {
+      "text": "calculations",
+      "type": "word",
+      "start": 48.8,
+      "end": 49.52
+    },
+    {
+      "text": "with",
+      "type": "word",
+      "start": 49.6,
+      "end": 49.84
+    },
+    {
+      "text": "your",
+      "type": "word",
+      "start": 49.92,
+      "end": 50.08
+    },
+    {
+      "text": "choice",
+      "type": "word",
+      "start": 50.16,
+      "end": 50.4
+    },
+    {
+      "text": "of",
+      "type": "word",
+      "start": 50.48,
+      "end": 50.56
+    },
+    {
+      "text": "frontier",
+      "type": "word",
+      "start": 50.72,
+      "end": 51.04
+    },
+    {
+      "text": "AI\u2014ChatGPT,",
+      "type": "word",
+      "start": 51.12,
+      "end": 52.8
+    },
+    {
+      "text": "Claude,",
+      "type": "word",
+      "start": 52.92,
+      "end": 53.44
+    },
+    {
+      "text": "Grok,",
+      "type": "word",
+      "start": 53.48,
+      "end": 53.92
+    },
+    {
+      "text": "or",
+      "type": "word",
+      "start": 54,
+      "end": 54.08
+    },
+    {
+      "text": "local",
+      "type": "word",
+      "start": 54.16,
+      "end": 54.4
+    },
+    {
+      "text": "models\u2014to",
+      "type": "word",
+      "start": 54.48,
+      "end": 55.12
+    },
+    {
+      "text": "optimize",
+      "type": "word",
+      "start": 55.2,
+      "end": 55.68
+    },
+    {
+      "text": "min-max",
+      "type": "word",
+      "start": 55.76,
+      "end": 56.24
+    },
+    {
+      "text": "levels",
+      "type": "word",
+      "start": 56.32,
+      "end": 56.56
+    },
+    {
+      "text": "using",
+      "type": "word",
+      "start": 56.64,
+      "end": 56.88
+    },
+    {
+      "text": "real",
+      "type": "word",
+      "start": 57.04,
+      "end": 57.28
+    },
+    {
+      "text": "usage",
+      "type": "word",
+      "start": 57.36,
+      "end": 57.68
+    },
+    {
+      "text": "data.",
+      "type": "word",
+      "start": 57.76,
+      "end": 58.4
+    },
+    {
+      "text": "The",
+      "type": "word",
+      "start": 58.44,
+      "end": 58.48
+    },
+    {
+      "text": "Machine",
+      "type": "word",
+      "start": 58.68,
+      "end": 58.88
+    },
+    {
+      "text": "Library",
+      "type": "word",
+      "start": 58.96,
+      "end": 59.36
+    },
+    {
+      "text": "counts",
+      "type": "word",
+      "start": 59.44,
+      "end": 59.76
+    },
+    {
+      "text": "each",
+      "type": "word",
+      "start": 59.84,
+      "end": 60
+    },
+    {
+      "text": "machine",
+      "type": "word",
+      "start": 60.08,
+      "end": 60.4
+    },
+    {
+      "text": "type",
+      "type": "word",
+      "start": 60.48,
+      "end": 60.64
+    },
+    {
+      "text": "across",
+      "type": "word",
+      "start": 60.72,
+      "end": 61.04
+    },
+    {
+      "text": "your",
+      "type": "word",
+      "start": 61.12,
+      "end": 61.2
+    },
+    {
+      "text": "fleet.",
+      "type": "word",
+      "start": 61.36,
+      "end": 61.6
+    },
+    {
+      "text": "Forge.",
+      "type": "word",
+      "start": 62,
+      "end": 62.56
+    },
+    {
+      "text": "Keep",
+      "type": "word",
+      "start": 62.8,
+      "end": 62.96
+    },
+    {
+      "text": "inventory",
+      "type": "word",
+      "start": 63.04,
+      "end": 63.52
+    },
+    {
+      "text": "moving\u2014and",
+      "type": "word",
+      "start": 63.68,
+      "end": 64.4
+    },
+    {
+      "text": "guesswork",
+      "type": "word",
+      "start": 64.48,
+      "end": 65.04
+    },
+    {
+      "text": "parked.",
+      "type": "word",
+      "start": 65.2,
+      "end": 65.84
+    }
+  ]
+}

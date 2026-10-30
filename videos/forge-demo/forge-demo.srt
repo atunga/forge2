@@ -1,0 +1,103 @@
+1
+00:00:00,080 --> 00:00:01,120
+Meet Forge.
+
+2
+00:00:01,280 --> 00:00:03,200
+Your vending and inventory systems,
+
+3
+00:00:03,280 --> 00:00:04,960
+finally working together.
+
+4
+00:00:05,200 --> 00:00:08,800
+The dashboard brings AutoCrib and CribMaster into one view:
+
+5
+00:00:09,080 --> 00:00:12,560
+customers, stations, stocked items, and pending actions.
+
+6
+00:00:12,640 --> 00:00:16,080
+Red stock-out alerts point straight to the station needing attention.
+
+7
+00:00:16,160 --> 00:00:17,920
+No treasure hunt required.
+
+8
+00:00:18,040 --> 00:00:20,320
+Find customers by name or account code.
+
+9
+00:00:20,560 --> 00:00:22,240
+Results narrow as you type.
+
+10
+00:00:22,360 --> 00:00:24,400
+Each card shows stations, items,
+
+11
+00:00:24,600 --> 00:00:27,280
+machine brand, location, pending recommendations,
+
+12
+00:00:27,320 --> 00:00:28,400
+and stock-outs.
+
+13
+00:00:28,480 --> 00:00:30,400
+Open an account for its station count,
+
+14
+00:00:30,560 --> 00:00:33,360
+total items, low stock, and pending actions.
+
+15
+00:00:33,520 --> 00:00:35,760
+Scroll through stations to inspect quantities,
+
+16
+00:00:35,840 --> 00:00:38,960
+min-max settings, pack sizes, warehouse availability,
+
+17
+00:00:39,040 --> 00:00:40,400
+and incoming orders.
+
+18
+00:00:40,560 --> 00:00:42,880
+Select replenishment items, adjust quantities,
+
+19
+00:00:42,920 --> 00:00:44,640
+and create an order summary.
+
+20
+00:00:44,720 --> 00:00:48,240
+For live installations, Forge is designed to combine its proprietary
+
+21
+00:00:48,320 --> 00:00:52,800
+inventory calculations with your choice of frontier AI—ChatGPT,
+
+22
+00:00:52,920 --> 00:00:57,680
+Claude, Grok, or local models—to optimize min-max levels using real usage
+
+23
+00:00:57,760 --> 00:00:58,400
+data.
+
+24
+00:00:58,440 --> 00:01:01,600
+The Machine Library counts each machine type across your fleet.
+
+25
+00:01:02,000 --> 00:01:02,560
+Forge.
+
+26
+00:01:02,800 --> 00:01:05,840
+Keep inventory moving—and guesswork parked.
